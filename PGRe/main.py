@@ -101,7 +101,7 @@ def main():
 
     run(f"bedtools maskfasta -fi {genome} -bed {mrna_bed} -fo {masked_genome}")
 
-    run(f"awk '/>{{print substr($1,2,length($1))}}' {proteome} > {in_organism_prot_id}")
+    run(f"awk '/^>/{{print substr($1,2,length($1))}}' {proteome} > {in_organism_prot_id}")
 
     proteome_full = proteome
     all_prot = os.path.join(outdir, "all_prot.fa")
