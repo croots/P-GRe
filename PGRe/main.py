@@ -129,7 +129,8 @@ def main():
     check_unitarity = os.path.join(outdir, "check_unitarity.list")
     run(
         f"sed -rn '/pseudogene/s/.+Target=([^ ]+).+/\\1/gp' {miniprot_filtered} | "
-        f"grep -Fxv -f {in_organism_prot_id} - > {check_unitarity}"
+        f"grep -Fxv -f {in_organism_prot_id} - > {check_unitarity}",
+        check=False
     )
 
     diamond_res = os.path.join(outdir, "diamond.res")
