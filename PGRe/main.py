@@ -63,7 +63,7 @@ def main():
 
     if args.outdir is None:
         timestamp = datetime.now().strftime("%d_%m_%Y_%Hh_%Mm_%Ss")
-        outdir = os.path.join(os.path.dirname(genome), f"PGRe_{timestamp}")
+        outdir = os.path.join(os.path.dirname(os.getcwd()), f"PGRe_{timestamp}")
         os.makedirs(outdir)
     else:
         outdir = args.outdir
